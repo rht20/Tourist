@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#dbdbdb"
+    android:layout_height="match_parent">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+
+
+          <LinearLayout
+              android:gravity="bottom"
+
+              android:orientation="vertical"
+              android:background="@drawable/hill"
+              android:layout_width="match_parent"
+              android:layout_height="170dp">
+
+              <TextView
+
+                  android:layout_marginLeft="8dp"
+                  android:textSize="25dp"
+                  android:textColor="#FFFFFF"
+                  android:text="Title of the tour"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content" />
+
+              <LinearLayout
+                  android:layout_marginLeft="8dp"
+                  android:layout_marginBottom="8dp"
+                  android:orientation="horizontal"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+                  <TextView
+
+                      android:textSize="15dp"
+                      android:textColor="#FFFFFF"
+                      android:text="22 Nov - "
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content" />
+                  <TextView
+
+                      android:textSize="15dp"
+                      android:textColor="#FFFFFF"
+                      android:text="27 Nov"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content" />
+              </LinearLayout>
+
+
+
+          </LinearLayout>
+
+          <TextView
+              android:id="@+id/day1_current"
+              android:gravity="center"
+              android:textColor="#FFFF"
+              android:background="#08284e"
+              android:textSize="15dp"
+              android:layout_marginTop="10dp"
+              android:text="Day 1"
+              android:layout_width="60dp"
+              android:layout_height="27dp" />
+
+          <EditText
+              android:id="@+id/et_day1"
+              android:hint="Write down your adventures here"
+              android:layout_width="match_parent"
+              android:layout_height="80dp" />
+
+          <TextView
+              android:visibility="gone"
+              android:id="@+id/day2_current"
+              android:gravity="center"
+              android:textColor="#FFFF"
+              android:background="#08284e"
+              android:textSize="15dp"
+              android:layout_marginTop="10dp"
+              android:text="Day 2"
+              android:layout_width="60dp"
+              android:layout_height="27dp" />
+
+          <EditText
+              android:visibility="gone"
+              android:id="@+id/et_day2"
+              android:hint="Write down your adventures here"
+              android:layout_width="match_parent"
+              android:layout_height="80dp" />
+
+          <TextView
+              android:visibility="gone"
+              android:id="@+id/day3_current"
+              android:gravity="center"
+              android:textColor="#FFFF"
+              android:background="#08284e"
+              android:textSize="15dp"
+              android:layout_marginTop="10dp"
+              android:text="Day 3"
+              android:layout_width="60dp"
+              android:layout_height="27dp" />
+
+          <EditText
+              android:visibility="gone"
+              android:id="@+id/et_day3"
+              android:hint="Write down your adventures here"
+              android:layout_width="match_parent"
+              android:layout_height="80dp" />
+
+          <TextView
+              android:visibility="gone"
+              android:id="@+id/day4_current"
+              android:gravity="center"
+              android:textColor="#FFFF"
+              android:background="#08284e"
+              android:textSize="15dp"
+              android:layout_marginTop="10dp"
+              android:text="Day 4"
+              android:layout_width="60dp"
+              android:layout_height="27dp" />
+
+          <EditText
+              android:visibility="gone"
+              android:id="@+id/et_day4"
+              android:hint="Write down your adventures here"
+              android:layout_width="match_parent"
+              android:layout_height="80dp" />
+
+          <TextView
+              android:visibility="gone"
+              android:id="@+id/day5_current"
+              android:gravity="center"
+              android:textColor="#FFFF"
+              android:background="#08284e"
+              android:textSize="15dp"
+              android:layout_marginTop="10dp"
+              android:text="Day 5"
+              android:layout_width="60dp"
+              android:layout_height="27dp" />
+
+          <EditText
+              android:visibility="gone"
+              android:id="@+id/et_day5"
+              android:hint="Write down your adventures here"
+              android:layout_width="match_parent"
+              android:layout_height="80dp" />
+
+          <LinearLayout
+              android:gravity="center"
+              android:layout_gravity="center"
+              android:layout_margin="15dp"
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+              <Button
+                  android:id="@+id/btn_current_addDay"
+                  android:textColor="#FFFF"
+                  android:background="#2f3133"
+                  android:text="Add Day"
+                  android:layout_width="wrap_content"
+                  android:layout_height="37dp" />
+
+              <Button
+                  android:id="@+id/btn_current_saveCurrent"
+                  android:layout_marginLeft="10dp"
+                  android:textColor="#FFFF"
+                  android:background="#2f3133"
+                  android:text="SAVE"
+                  android:layout_width="wrap_content"
+                  android:layout_height="37dp" />
+          </LinearLayout>
+
+
+      </LinearLayout>
+
+   </ScrollView>
+
+</FrameLayout>

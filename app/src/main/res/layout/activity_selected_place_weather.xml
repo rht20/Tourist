@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#323333"
+    android:padding="10dp">
+
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="20"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:padding="10dp"
+                    android:background="#3e3e3e"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/forecastPlaceTV"
+                        android:textColor="#e4e6e9"
+                        android:textSize="40dp"
+                        android:text="Forecast"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+
+
+                    android:background="#3f4040"
+                    android:paddingTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:text="dd/mm/yyyy"
+                        android:textColor="#dcdede"
+                        android:id="@+id/dateTV1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:textColor="#dcdede"
+                        android:paddingTop="5dp"
+                        android:id="@+id/skyStatusTV1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sky Status"
+                        android:gravity="center_horizontal"
+                        android:textSize="22dp"/>
+
+                    <LinearLayout
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Max Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_marginBottom="8dp"
+                                android:id="@+id/maxTmpTV1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Min Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:id="@+id/minTmpTV1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+
+
+                    android:background="#3f4040"
+                    android:paddingTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="#dcdede"
+                        android:id="@+id/dateTV2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="dd/mm/yyyy"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:textColor="#dcdede"
+                        android:paddingTop="5dp"
+                        android:id="@+id/skyStatusTV2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sky Status"
+                        android:gravity="center_horizontal"
+                        android:textSize="22dp"/>
+
+                    <LinearLayout
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Max Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_marginBottom="8dp"
+                                android:id="@+id/maxTmpTV2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Min Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:id="@+id/minTmpTV2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                app:cardCornerRadius="5dp"
+                app:cardElevation="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+
+
+                    android:background="#3f4040"
+                    android:paddingTop="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="#dcdede"
+                        android:id="@+id/dateTV3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="dd/mm/yyyy"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        />
+                    <TextView
+                        android:textColor="#dcdede"
+                        android:paddingTop="5dp"
+                        android:id="@+id/skyStatusTV3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sky Status"
+                        android:gravity="center_horizontal"
+                        android:textSize="22dp"/>
+
+                    <LinearLayout
+                        android:paddingTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="10"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Max Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_marginBottom="8dp"
+                                android:id="@+id/maxTmpTV3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:orientation="vertical">
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Min Temp"
+                                android:textSize="20dp"
+                                android:gravity="center_horizontal"/>
+                            <TextView
+                                android:textColor="#dcdede"
+                                android:id="@+id/minTmpTV3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text=" °C"
+                                android:textSize="30dp"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

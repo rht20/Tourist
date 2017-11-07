@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <RelativeLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:padding="8dp">
+
+      <ScrollView
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical" >
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/b_editProf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:textSize="10dp"
+                android:layout_centerHorizontal="false" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img_profilepic"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/profile"
+                android:layout_gravity="center" />
+
+            <Button
+                android:id="@+id/b_uploadImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Upload Image"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_profile_per"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Personal Profile"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight="10">
+
+                  <TextView
+                      android:text="Name: "
+                      android:textSize="17dp"
+                      android:paddingTop="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+               </LinearLayout>
+
+               <EditText
+                   android:id="@+id/nameET"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="text"
+                   android:hint="Name"
+                   android:layout_weight="3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight="10">
+
+                  <TextView
+                      android:text="Phone: "
+                      android:textSize="17dp"
+                      android:paddingTop="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+               </LinearLayout>
+
+
+               <EditText
+                   android:id="@+id/phoneET"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="phone"
+                   android:hint="+8801XXXXXXXXX"
+                   android:layout_weight="3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight="10">
+
+                  <TextView
+                      android:text="Email: "
+                      android:textSize="17dp"
+                      android:paddingTop="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+               </LinearLayout>
+
+               <EditText
+                   android:id="@+id/emailET"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="textEmailAddress"
+                   android:hint="example@gmail.com"
+                   android:layout_weight="3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight="10">
+
+                  <TextView
+                      android:text="Address: "
+                      android:textSize="17dp"
+                      android:paddingTop="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+               </LinearLayout>
+
+               <EditText
+                   android:id="@+id/addrET"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="text"
+                   android:hint="House, Street, City, Country"
+                   android:layout_weight="3"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="5">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_weight="10">
+
+                  <TextView
+                      android:text="Institution: "
+                      android:textSize="15dp"
+                      android:paddingTop="10dp"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"/>
+               </LinearLayout>
+
+               <EditText
+                   android:id="@+id/instET"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="text"
+                   android:hint="Institution"
+                   android:layout_weight="3"/>
+
+            </LinearLayout>
+
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:orientation="horizontal"
+                 android:layout_weight="5">
+
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:layout_weight="10">
+
+                     <TextView
+                         android:text="Birthdate: "
+                         android:textSize="17dp"
+                         android:paddingTop="10dp"
+                         android:layout_width="match_parent"
+                         android:layout_height="match_parent"/>
+                 </LinearLayout>
+
+                 <EditText
+                     android:id="@+id/dobET"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:inputType="date"
+                     android:hint="DD/MM/YYYY"
+                     android:layout_weight="3"/>
+
+             </LinearLayout>
+
+               <Button
+                   android:id="@+id/b_profUpdate"
+                   android:layout_marginTop="10dp"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Update"
+                   android:gravity="center_horizontal" />
+
+         </LinearLayout>
+
+      </ScrollView>
+
+   </RelativeLayout>
+
+</FrameLayout>

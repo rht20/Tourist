@@ -1,0 +1,86 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/search_bar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="6">
+
+        <EditText
+            android:id="@+id/search_text"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="5"
+            android:ems="10"
+            android:hint="Search Location"
+            android:layout_alignParentTop="true"/>
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Search"
+            android:layout_weight="1"
+            android:layout_alignParentTop="true"
+            android:contextClickable="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nearByPlaces"
+        android:layout_below="@id/search_bar"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="4">
+
+        <Button
+            android:id="@+id/hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hospitals"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/restaurant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurants"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/police_station"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Police"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/Go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:textSize="12sp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_below="@id/nearByPlaces"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.rht.amrmap.MapsActivity" />
+
+</RelativeLayout>

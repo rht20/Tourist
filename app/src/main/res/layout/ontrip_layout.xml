@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <android.support.v7.widget.CardView
+
+
+        app:cardElevation="4dp"
+        app:cardCornerRadius="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="#e5e5e5"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/onTripTitle"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:text="Keokradong tour of CSEDU 22"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/onTripPlace"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:text="Keokradong, Banderban"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/onTripDate"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:textSize="16dp"
+                android:text="31/12/2016 - 3/1/2017"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/currentScroll"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/mainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+
+                android:id="@+id/etDayDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Write down your adventures" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAddDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:text="Add day" />
+
+                <Button
+                    android:id="@+id/btnDeleteDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Delete Day" />
+            </LinearLayout>
+
+            <TextView
+
+                android:id="@+id/dayIdentifier1"
+                android:layout_width="60dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="10dp"
+                android:background="#08284e"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="#FFFF"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/dayDetails1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Write down your adventures here"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/dayIdentifier2"
+                android:layout_width="60dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="20dp"
+                android:background="#08284e"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="#FFFF"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/dayDetails2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Write down your adventures here"
+                android:textSize="18dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayIdentifier3"
+                android:layout_width="60dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="20dp"
+                android:background="#08284e"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="#FFFF"
+                android:textSize="15dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayDetails3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Write down your adventures here"
+                android:textSize="18dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayIdentifier4"
+                android:layout_width="60dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="20dp"
+                android:background="#08284e"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="#FFFF"
+                android:textSize="15dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayDetails4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Write down your adventures here"
+                android:textSize="18dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayIdentifier5"
+                android:layout_width="60dp"
+                android:layout_height="27dp"
+                android:layout_marginTop="20dp"
+                android:background="#08284e"
+                android:gravity="center"
+                android:text="Day 1"
+                android:textColor="#FFFF"
+                android:textSize="15dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/dayDetails5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Write down your adventures here"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/costDetails"
+                android:layout_marginTop="40dp"
+                android:textSize="19dp"
+                android:text="Cost so far: 0 BDT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/amountAdder"
+                    android:inputType="numberDecimal"
+                    android:hint="     "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/addAmount"
+                    android:text="+"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <Button
+                    android:id="@+id/deleteAmount"
+                    android:layout_marginBottom="10dp"
+                    android:text="-"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"  />
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/saveData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="SAVE" />
+
+        </LinearLayout>
+
+
+
+    </ScrollView>
+</LinearLayout>

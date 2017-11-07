@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:paddingTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:textColor="#2d2826"
+            android:layout_marginTop="20dp"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:text="Plan the perfect trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/titleET"
+            android:textSize="18dp"
+            android:layout_gravity="center"
+            android:textColor="#2d2726"
+            android:textColorHint="#685d5a"
+            android:textStyle="bold"
+            android:hint="Give a catchy title"
+            android:layout_width="wrap_content"
+            android:backgroundTint="#97827c"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:text="Start date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/startDateET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DD/MM/YYYY"/>
+
+        <TextView
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:text="End date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/endDateET"
+            android:hint="DD/MM/YYYY"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/destTV"
+            android:paddingTop="30dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp"
+            android:text="Destination"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/destinationET"
+            android:inputType="text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <Button
+            android:id="@+id/weatherBtn"
+            android:layout_marginTop="6dp"
+            android:layout_gravity="center"
+            android:text="Weather Forecast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <android.support.v7.widget.CardView
+            android:paddingTop="40dp"
+            android:id="@+id/GuideCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Guide Info"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Guide Name"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/guideNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Lokman Bhai"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact no."
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/guidePhoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="01712400131"
+                    android:textSize="15dp"/>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_marginTop="40dp"
+            android:id="@+id/HotelCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel Info"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:gravity="center_horizontal"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hotel Name"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/hotelNameET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hotel Albatras"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/hotelAddrET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="21, Sajek Valley"
+                    android:textSize="15dp"/>
+
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact no."
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/hotelPhoneET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="+88025731"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/hotelEmailET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="contact_albatras@yahoo.com"
+                    android:textSize="15dp"/>
+                <TextView
+                    android:paddingTop="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Website"
+                    android:textSize="20dp"/>
+                <EditText
+                    android:id="@+id/hotelWebsiteET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="www.thehotelalbatras.com"
+                    android:textSize="15dp"/>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Save"/>
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+</FrameLayout>

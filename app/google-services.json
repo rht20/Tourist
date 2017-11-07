@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "977320915042",
+    "firebase_url": "https://tourist-arm.firebaseio.com",
+    "project_id": "tourist-arm",
+    "storage_bucket": "tourist-arm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977320915042:android:f6fcdeb9f5d76b3e",
+        "android_client_info": {
+          "package_name": "com.arm.tourist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "977320915042-jpk4o0kcsrtkkktk8k42ncf6fcvcbqo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcKd7Wip702HEJLsjn9YuAcGKy-LuVdMA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
