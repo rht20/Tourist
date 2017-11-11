@@ -7,7 +7,7 @@ public class TourEvent implements Parcelable {
 
     private String note;
     private String tourTitle, postId, tourPlace, startDate, endDate;
-    private String likeCount, totalCost;
+    private String likeCount, totalCost, commentCount;
     private String hotelDescription, guideName;
     private String cover, img1, img2, img3;
     private String userName, userImage;
@@ -23,6 +23,7 @@ public class TourEvent implements Parcelable {
         startDate = in.readString();
         endDate = in.readString();
         likeCount = in.readString();
+        commentCount = in.readString();
         totalCost = in.readString();
         hotelDescription = in.readString();
         guideName = in.readString();
@@ -188,15 +189,25 @@ public class TourEvent implements Parcelable {
         return 0;
     }
 
+    public String getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(String commentCount) {
+        this.commentCount = commentCount;
+    }
+
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(note);
         parcel.writeString(tourTitle);
         parcel.writeString(postId);
         parcel.writeString(tourPlace);
+
         parcel.writeString(startDate);
         parcel.writeString(endDate);
         parcel.writeString(likeCount);
+        parcel.writeString(commentCount);
         parcel.writeString(totalCost);
         parcel.writeString(hotelDescription);
         parcel.writeString(guideName);

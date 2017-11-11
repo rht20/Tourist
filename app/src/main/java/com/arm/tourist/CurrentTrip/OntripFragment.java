@@ -45,7 +45,7 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
         init();
 
         currentTrip = new OnTripDetails();
-        currentTrip.setTourTitle("###");
+        currentTrip.settitle("###");
 
         userId = FirebaseAuth.getInstance().getCurrentUser().getUid().toString();
 
@@ -59,7 +59,7 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
                 if(tmp != null)
                 {
                     currentTrip = tmp;
-                    Log.e("tour :", currentTrip.getTourTitle());
+                    Log.e("tour :", currentTrip.gettitle());
                     LoadData();
                 }
 
@@ -75,7 +75,7 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
         });
 
 
-        Log.e("tour :", currentTrip.getTourTitle());
+        Log.e("tour :", currentTrip.gettitle());
         LoadData();
 
         return view;
@@ -127,9 +127,9 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
 
     private void LoadData(){
 
-        Log.e("load data :", currentTrip.getTourTitle());
+        Log.e("load data :", currentTrip.gettitle());
 
-        if(currentTrip.getTourTitle().equals("###"))
+        if(currentTrip.gettitle().equals("###"))
         {
             onTripTitle.setText("No ongoing tour");
             onTripDate.setVisibility(View.INVISIBLE);
@@ -141,9 +141,54 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
         }
         else
         {
-            onTripTitle.setText(currentTrip.getTourTitle());
+            onTripTitle.setText(currentTrip.gettitle());
             onTripDate.setText(currentTrip.getTourDate());
             onTripPlace.setText(currentTrip.getTourPlace());
+            approxCost.setText("Cost so far: " + currentTrip.getCost() + " BDT");
+
+            myTextViews[1].setText(currentTrip.getDayFirst());
+            if(myTextViews[1].getText().toString().trim().equals("") == false)
+            {
+                myTextViews[1].setVisibility(View.VISIBLE);
+                dayIdentifiers[1].setVisibility(View.VISIBLE);
+                dayIdentifiers[1].setText(" Day 1 ");
+                currentDay = 1;
+            }
+
+            myTextViews[2].setText(currentTrip.getDaySecond());
+            if(myTextViews[2].getText().toString().trim().equals("") == false)
+            {
+                myTextViews[2].setVisibility(View.VISIBLE);
+                dayIdentifiers[2].setVisibility(View.VISIBLE);
+                dayIdentifiers[2].setText(" Day 2 ");
+                currentDay = 2;
+            }
+
+            myTextViews[3].setText(currentTrip.getDayThird());
+            if(myTextViews[3].getText().toString().trim().equals("") == false)
+            {
+                myTextViews[3].setVisibility(View.VISIBLE);
+                dayIdentifiers[3].setVisibility(View.VISIBLE);
+                dayIdentifiers[3].setText(" Day 3 ");
+                currentDay = 3;
+            }
+            myTextViews[4].setText(currentTrip.getDayFourth());
+            if(myTextViews[4].getText().toString().trim().equals("") == false)
+            {
+                myTextViews[4].setVisibility(View.VISIBLE);
+                dayIdentifiers[4].setVisibility(View.VISIBLE);
+                dayIdentifiers[4].setText(" Day 4 ");
+                currentDay = 4;
+            }
+
+            myTextViews[5].setText(currentTrip.getDayFifth());
+            if(myTextViews[5].getText().toString().trim().equals("") == false)
+            {
+                myTextViews[5].setVisibility(View.VISIBLE);
+                dayIdentifiers[5].setVisibility(View.VISIBLE);
+                dayIdentifiers[5].setText(" Day 5 ");
+                currentDay = 5;
+            }
 
             onTripTitle.setVisibility(View.VISIBLE);
             onTripDate.setVisibility(View.VISIBLE);
@@ -235,7 +280,7 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
             case R.id.saveData:
 
                 saveData();
-                Toast.makeText(getActivity(), "Save button pressed", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(getActivity(), "Save button pressed", Toast.LENGTH_SHORT).show();
                 break;
 
             case R.id.addAmount:
@@ -249,6 +294,7 @@ public class OntripFragment extends Fragment implements View.OnClickListener {
                 totalCost += amount;
 
                 approxCost.setText("Cost so far: " + totalCost + " BDT.");
+
                 break;
 
             case R.id.deleteAmount:

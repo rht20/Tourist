@@ -30,8 +30,11 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
+import java.util.Calendar;
+
 public class PublishFragmentSecond extends Fragment implements View.OnClickListener {
 
+    Calendar calendar = Calendar.getInstance();
 
     String userRef;
 
@@ -51,7 +54,6 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
         mStorage = FirebaseStorage.getInstance().getReference();
 
         myView = inflater.inflate(R.layout.publish_second, container, false);
-
 
         init();
 
@@ -113,8 +115,8 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
                 myEvent.setNote(shortNote.getText().toString().trim());
                 //   myEvent.setUserId(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
-
                 saveToFirebase(myEvent);
+
             }
         });
 
@@ -147,9 +149,7 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
             }
         });
 
-
         return myView;
-
     }
 
 
@@ -219,7 +219,6 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
 
     private void saveToFirebase(TourEvent myEvent) {
 
-
         myEvent.setUserImage(userImage);
         myEvent.setUserName(userName);
         myEvent.setCover(cover);
@@ -227,7 +226,9 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
         myEvent.setImg1(img1);
         myEvent.setImg2(img2);
         myEvent.setImg3(img3);
-
+        myEvent.setLikeCount("0");
+        myEvent.setCommentCount("0");
+        myEvent.setTime(processDate());
         myEvent.setPostId(pushKey);
 
         mdatabase = FirebaseDatabase.getInstance().getReference();
@@ -259,7 +260,6 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
 
     }
 
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
@@ -275,7 +275,6 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
 
                         if (tmp != null) {
                             shortNote.append(extractDay(tmp));
-
                         }
                     }
 
@@ -325,5 +324,17 @@ public class PublishFragmentSecond extends Fragment implements View.OnClickListe
             res += plan.getDayFifth();
         }
         return res;
+    }
+
+    private String processDate()
+    {
+        String date = calendar.getTime().toString();
+        String temp[] = date.split(" ");
+        date = temp[0];
+        date += " ";
+        date += temp[1];
+        date += " ";
+        date += temp[2];
+        return date;
     }
 }

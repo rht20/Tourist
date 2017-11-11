@@ -6,10 +6,16 @@ package com.arm.tourist.Models;
 
 public class PostComment {
 
-    String postId, userId, userImage, commentText, commentTime;
+    String postId, userName, userImage, commentText, commentTime;
 
-    public PostComment()
-    {
+    public PostComment(){}
+
+    public PostComment(String postId, String userName, String userImage, String commentText, String commentTime) {
+        this.postId = postId;
+        this.userName = userName;
+        this.userImage = userImage;
+        this.commentText = commentText;
+        this.commentTime = commentTime;
     }
 
     public String getPostId() {
@@ -20,12 +26,12 @@ public class PostComment {
         this.postId = postId;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getUserImage() {

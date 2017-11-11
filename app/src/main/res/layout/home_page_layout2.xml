@@ -28,10 +28,8 @@
                     android:id="@+id/skyStatusTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_gravity="center"
                     android:layout_marginTop="40dp"
-                    android:text="Cloudy"
                     android:textColor="#FFFF"
                     android:textSize="16dp" />
 
@@ -41,7 +39,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="Dhaka, Bangladesh"
                     android:textColor="#FFFF"
                     android:textSize="18dp" />
 
@@ -49,10 +46,8 @@
                     android:id="@+id/tempTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="20 °C"
                     android:textColor="#FFFF"
                     android:textSize="45dp" />
 
@@ -83,16 +78,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="Your upcoming trip..." />
+                        android:text="Your current trip..." />
 
                     <TextView
 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
+                        android:id="@+id/homePageTVcurrent"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="6dp"
-                        android:text="Post semester final tour"
+                        android:text="Khulna tour"
                         android:textColor="#0f2552"
                         android:textSize="18dp"
                         android:textStyle="bold" />
@@ -103,7 +98,7 @@
                         android:layout_marginBottom="15dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:text="Keokradong, Banderban"
+                        android:text="Khulna"
                         android:textColor="#0f2552" />
 
                 </LinearLayout>

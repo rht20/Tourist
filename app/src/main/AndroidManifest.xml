@@ -45,7 +45,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCAvPWWFAXG9zD6MdYoH5sJTVbtGlMdVNQ" />
 
-        <activity android:name=".NewsFeed.CommentSection"></activity>
+        <activity android:name=".NewsFeed.CommentSection" />
+        <activity android:name=".PublishTour.PublishPlan1" />
+        <activity android:name=".PublishTour.PublishPlan2"></activity>
     </application>
 
 </manifest>

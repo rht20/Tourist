@@ -6,14 +6,14 @@ public class OnTripDetails {
     String dayFirst, daySecond, dayThird, dayFourth, dayFifth;
     String cost;
     String uID;
-    String tourTitle, tourPlace, tourDate;
+    String title, tourPlace, tourDate;
 
-    public String getTourTitle() {
-        return tourTitle;
+    public String gettitle() {
+        return title;
     }
 
-    public void setTourTitle(String tourTitle) {
-        this.tourTitle = tourTitle;
+    public void settitle(String title) {
+        this.title = title;
     }
 
     public String getTourPlace() {

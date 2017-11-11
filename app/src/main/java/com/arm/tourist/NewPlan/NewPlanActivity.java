@@ -1,6 +1,8 @@
 package com.arm.tourist.NewPlan;
 
 import android.content.Intent;
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -29,6 +31,8 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
 
 public class NewPlanActivity extends AppCompatActivity {
 
@@ -79,6 +83,11 @@ public class NewPlanActivity extends AppCompatActivity {
         weatherBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(dest.getText().toString().trim().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(), "Please select a place", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 weatherForecast();
             }
         });
@@ -123,9 +132,11 @@ public class NewPlanActivity extends AppCompatActivity {
                     myplan.setPlaceLongt(90.399452);
                     return;
                 }
-                Toast.makeText(NewPlanActivity.this, "Place Selected: "+place.getName(),Toast.LENGTH_SHORT).show();
+           //     Toast.makeText(NewPlanActivity.this, "Place Selected: "+place.getName(),Toast.LENGTH_SHORT).show();
                 Log.d(TAG,"Place Selected: "+place.getName().toString()+" "+place.getLatLng().longitude+" "+place.getLatLng().longitude);
-                dest.setText(place.getName().toString());
+
+                String selectedPlaceName = getAddressName(place.getLatLng().latitude,place.getLatLng().longitude);
+                dest.setText(selectedPlaceName);
 
                 myplan.setPlaceName(place.getName().toString());
                 myplan.setPlaceLat(place.getLatLng().latitude);
@@ -145,21 +156,23 @@ public class NewPlanActivity extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putParcelable("Place",mPlace);
         intent.putExtras(bundle);
+
+
         startActivity(intent);
     }
 
     void SavePlan()
     {
-        /*if(isValidDate(stDt.getText().toString())==false)
+        if(planTitle.getText().toString().trim().equals(""))
         {
-            stDt.setError("Follow Given Date Format");
+            Toast.makeText(NewPlanActivity.this, "Some fields are blank", Toast.LENGTH_SHORT ).show();
             return;
         }
-        if(isValidDate(enDt.getText().toString())==false)
+        if(stDt.getText().toString().trim().equals(""))
         {
-            enDt.setError("Follow Given Date Format");
+            Toast.makeText(NewPlanActivity.this, "Some fields are blank", Toast.LENGTH_SHORT ).show();
             return;
-        }*/
+        }
 
         unixTimeSt = dateToUnix(stDt.getText().toString());
 
@@ -167,10 +180,8 @@ public class NewPlanActivity extends AppCompatActivity {
         myplan.setTitle(planTitle.getText().toString());
         myplan.setStartDate(stDt.getText().toString());
         myplan.setEndDate(enDt.getText().toString());
-        //Default
-        //myplan.setPlaceName("");
-        //myplan.setPlaceLat(23.777176);
-        //myplan.setPlaceLongt(90.399452);
+        myplan.setUnixTimeEn(dateToUnix(enDt.getText().toString()));
+
         if(myplan.getPlaceName()=="") myplan.setPlaceName(dest.getText().toString());
 
         myplan.setGuide(new Guide(guideNameET.getText().toString().trim(), guideContactNoET.getText().toString().trim()));
@@ -181,7 +192,7 @@ public class NewPlanActivity extends AppCompatActivity {
                 hotelWebsiteET.getText().toString().trim()));
 
         FirebaseUser mUser = FirebaseHelper.getFirebaseUser();
-       // FirebaseDatabase database = FirebaseHelper.getFirebaseDatabaseInstance();
+        // FirebaseDatabase database = FirebaseHelper.getFirebaseDatabaseInstance();
         DatabaseReference userPlanRef = database.getReference("userPlans").child(mUser.getUid());
         String pushKey = userPlanRef.push().getKey();
         myplan.setPostID(pushKey);
@@ -256,5 +267,23 @@ public class NewPlanActivity extends AppCompatActivity {
         {
             return null;
         }
+    }
+
+    public String getAddressName(double lat, double longt)
+    {
+        Geocoder geocoder = new Geocoder(NewPlanActivity.this, Locale.getDefault() );
+
+        try
+        {
+            List<Address> addresses  = geocoder.getFromLocation(lat,longt, 1);
+            Address obj = addresses.get(0);
+            String addrName = obj.getAddressLine(0);
+            return addrName;
+        }
+        catch (Exception e)
+        {
+
+        }
+        return  null;
     }
 }

@@ -1,20 +1,14 @@
 package com.arm.tourist.Models;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class UserProfile {
+public class UserProfile implements Parcelable {
 
     private String name, email, phone, userID, profilePicUrl, DOB, addr,inst;
 
     public UserProfile()
     {
-    }
-
-    public UserProfile(String name, String email, String phone, String userID, String profilePicUrl) {
-        this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.userID = userID;
-        this.profilePicUrl = profilePicUrl;
     }
 
     public UserProfile(String name, String email, String phone, String userID, String profilePicUrl, String DOB, String addr, String inst) {
@@ -27,6 +21,34 @@ public class UserProfile {
         this.addr = addr;
         this.inst = inst;
     }
+
+    protected UserProfile(Parcel in) {
+        name = in.readString();
+        email = in.readString();
+        phone = in.readString();
+        userID = in.readString();
+        profilePicUrl = in.readString();
+        DOB = in.readString();
+        addr = in.readString();
+        inst = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<UserProfile> CREATOR = new Creator<UserProfile>() {
+        @Override
+        public UserProfile createFromParcel(Parcel in) {
+            return new UserProfile(in);
+        }
+
+        @Override
+        public UserProfile[] newArray(int size) {
+            return new UserProfile[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -91,47 +113,15 @@ public class UserProfile {
     public void setInst(String inst) {
         this.inst = inst;
     }
-}
-/*
 
-class UserProfile2 implements Serializable {
-
-    String name;
-    String email;
-    String userID;
-
-
-    UserProfile2(String name, String email)
-    {
-        this.name=name;
-        this.email=email;
-    }
-
-    public UserProfile2(String name, String email, String userID) {
-        this.name = name;
-        this.email = email;
-        this.userID = userID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    @Override
-    public String toString() {
-        return "UserProfile2{" +
-                "name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", userID='" + userID + '\'' +
-                '}';
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(name);
+        parcel.writeString(email);
+        parcel.writeString(phone);
+        parcel.writeString(userID);
+        parcel.writeString(profilePicUrl);
+        parcel.writeString(DOB);
+        parcel.writeString(addr);
+        parcel.writeString(inst);
     }
 }
-*/

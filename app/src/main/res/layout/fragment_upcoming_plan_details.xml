@@ -1,8 +1,10 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <ScrollView
+        android:background="#e1dfdf"
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -11,92 +13,103 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/titleET"
-                android:textSize="18dp"
-                android:layout_gravity="center"
-                android:textColor="#2d2726"
-                android:textColorHint="#685d5a"
-                android:textStyle="bold"
-                android:hint="Tour title"
-                android:layout_width="wrap_content"
-                android:backgroundTint="#97827c"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:text="Start date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <EditText
-                android:id="@+id/startDateET"
+            <android.support.v7.widget.CardView
+                app:cardElevation="3dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="DD/MM/YYYY"/>
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:text="End date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/endDateET"
-                android:hint="DD/MM/YYYY"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/titleET"
+                        android:textSize="18dp"
+                        android:layout_gravity="center"
+                        android:textColor="#2d2726"
+                        android:textColorHint="#685d5a"
+                        android:textStyle="bold"
+                        android:hint="Tour title"
+                        android:layout_width="wrap_content"
+                        android:backgroundTint="#97827c"
+                        android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/destTV"
-                android:paddingTop="30dp"
-                android:layout_marginLeft="6dp"
-                android:layout_marginTop="6dp"
-                android:text="Destination"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:text="Start date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-            <EditText
-                android:id="@+id/destinationET"
-                android:inputType="text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/startDateET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="DD/MM/YYYY"/>
 
-            <Button
-                android:id="@+id/weatherBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Weather Forecast"
-                android:gravity="center"/>
+                    <TextView
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:text="End date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/endDateET"
+                        android:hint="DD/MM/YYYY"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/destTV"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginTop="6dp"
+                        android:text="Destination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <EditText
+                        android:id="@+id/destinationET"
+                        android:inputType="text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <Button
+                        android:id="@+id/weatherBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Weather Forecast"
+                        android:gravity="center"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
+                app:cardElevation="3dp"
                 android:layout_marginTop="10dp"
                 android:id="@+id/GuideCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
 
+                <LinearLayout
+                    android:padding="10dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
                     <TextView
+
+                        android:padding="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Guide Info"
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:gravity="center_horizontal"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:paddingTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
 
                     <TextView
                         android:paddingTop="5dp"
@@ -129,15 +142,20 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_marginTop="40dp"
+                app:cardElevation="3dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/HotelCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="5">
 
+
+
                 <LinearLayout
+                    android:padding="10dp"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -145,15 +163,6 @@
                         android:textStyle="bold"
                         android:textSize="20dp"
                         android:gravity="center_horizontal"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:paddingTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
                     <TextView
                         android:paddingTop="5dp"
                         android:layout_width="wrap_content"

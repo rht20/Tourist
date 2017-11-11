@@ -3,7 +3,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <ScrollView
@@ -16,6 +16,7 @@
             android:orientation="vertical">
 
             <android.support.v7.widget.CardView
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -35,13 +36,11 @@
                             android:id="@+id/user_image"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:background="@drawable/profile"/>
+                            android:layout_gravity="center"/>
 
                         <TextView
                             android:id="@+id/user_name"
                             android:padding="10dp"
-                            android:text="MMMMMMMMMM"
                             android:textStyle="bold"
                             android:textSize="16dp"
                             android:layout_width="wrap_content"
@@ -50,7 +49,6 @@
                         <TextView
                             android:id="@+id/commentTime"
                             android:padding="8dp"
-                            android:text="12/12/1233"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="right"
@@ -58,12 +56,17 @@
 
                     </LinearLayout>
 
+                    <!--<View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#c9c2c2">
+                    </View>-->
+
                     <TextView
-                        android:layout_marginLeft="45dp"
+                        android:layout_marginLeft="10dp"
                         android:id="@+id/text_comment"
-                        android:padding="10dp"
-                        android:text="hiiiiiiiiiiiiiiiiiiiiiiii"
-                        android:textSize="20dp"
+                        android:paddingLeft="50dp"
+                        android:textSize="15dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 

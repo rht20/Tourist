@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hospitals"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:layout_weight="1"/>
 
         <Button
@@ -52,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Restaurants"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:layout_weight="1"/>
 
         <Button
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Police"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:layout_weight="1"/>
 
         <Button
@@ -68,7 +68,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Go"
-            android:textSize="12sp"
+            android:textSize="11sp"
             android:layout_weight="1"/>
 
     </LinearLayout>

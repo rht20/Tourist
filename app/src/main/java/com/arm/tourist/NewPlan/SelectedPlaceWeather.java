@@ -70,32 +70,77 @@ public class SelectedPlaceWeather extends AppCompatActivity {
                         //day 1
                         dateTV1.setText(getDateString(threeHourForecast.getThreeHourWeatherArray().get(3).getDt()));
                         skyTV1.setText(threeHourForecast.getThreeHourWeatherArray().get(3).getWeatherArray().get(0).getMain());
-                        String minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(3).getMain().getTempMin() +" °C";
-                        minTmp1.setText("21.20");
-                        String mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(3).getMain().getTempMax()+" °C";
+                        String minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(2).getMain().getTempMin() +" °C";
+
+                        minTmp1.setText(minTmp);
+                        String mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(5).getMain().getTempMax()+" °C";
                         mxTmp1.setText(mxTmp);
 
+                        String tmp1 = minTmp, tmp2 = mxTmp;
+
+                        if(tmp1.compareTo(tmp2)<0)
+                        {
+                            minTmp1.setText(tmp1);
+                            mxTmp1.setText(tmp2);
+                        }
+
+                        else
+                        {     minTmp1.setText(tmp2);
+                            mxTmp1.setText(tmp1);
+
+                        }
                         Log.e(TAG,"1: "+ minTmp+" "+mxTmp);
 
                         //day 2
                         dateTV2.setText(getDateString(threeHourForecast.getThreeHourWeatherArray().get(11).getDt()));
-                        skyTV2.setText(threeHourForecast.getThreeHourWeatherArray().get(11).getWeatherArray().get(0).getMain());
-                        minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(11).getMain().getTempMin()+" °C";
-                        minTmp2.setText("22.23");
-                        mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(11).getMain().getTempMax()+" °C";
+                        skyTV2.setText(threeHourForecast.getThreeHourWeatherArray().get(15).getWeatherArray().get(0).getMain());
+                        minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(10).getMain().getTempMin()+" °C";
+                        minTmp2.setText(minTmp);
+                        mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(13).getMain().getTempMax()+" °C";
                         mxTmp2.setText(mxTmp);
 
+                        tmp1 = minTmp;
+                        tmp2 = mxTmp;
+
+                        if(tmp1.compareTo(tmp2)<0)
+                        {
+                            minTmp2.setText(tmp1);
+                            mxTmp2.setText(tmp2);
+                        }
+
+                        else
+                        {     minTmp2.setText(tmp2);
+                            mxTmp2.setText(tmp1);
+
+                        }
                         Log.e(TAG,"1: "+ minTmp+" "+mxTmp);
 
                         //day 3
                         dateTV3.setText(getDateString(threeHourForecast.getThreeHourWeatherArray().get(19).getDt()));
                         skyTV3.setText(threeHourForecast.getThreeHourWeatherArray().get(19).getWeatherArray().get(0).getMain());
-                        minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(19).getMain().getTempMin()+" °C";
-                        minTmp3.setText("20.54");
-                        mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(19).getMain().getTempMax()+" °C";
+                        minTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(18).getMain().getTempMin()+" °C";
+                        minTmp3.setText(minTmp);
+                        mxTmp = "" + threeHourForecast.getThreeHourWeatherArray().get(21).getMain().getTempMax()+" °C";
                         mxTmp3.setText(mxTmp);
 
                         Log.e(TAG,"1: "+ minTmp+" "+mxTmp);
+
+
+                        tmp1 = minTmp;
+                        tmp2 = mxTmp;
+
+                        if(tmp1.compareTo(tmp2)<0)
+                        {
+                            minTmp3.setText(tmp1);
+                            mxTmp3.setText(tmp2);
+                        }
+
+                        else
+                        {     minTmp3.setText(tmp2);
+                            mxTmp3.setText(tmp1);
+
+                        }
+
                     }
 
                     @Override

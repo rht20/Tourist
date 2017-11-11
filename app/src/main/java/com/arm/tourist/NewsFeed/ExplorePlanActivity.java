@@ -22,6 +22,7 @@ public class ExplorePlanActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private List<TourEvent> list;
 
+    private boolean flag;
     //private ImageView
     DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Tours");
 
@@ -36,6 +37,8 @@ public class ExplorePlanActivity extends AppCompatActivity {
 
         list = new ArrayList<>();
 
+        flag = true;
+
         load_data();
     }
 
@@ -44,15 +47,17 @@ public class ExplorePlanActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                list.clear();
-                for(DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
-                {
-                    TourEvent tourEvent = dataSnapshot1.getValue(TourEvent.class);
-                    list.add(tourEvent);
-                }
+                //if(flag) {
+                    list.clear();
+                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                        TourEvent tourEvent = dataSnapshot1.getValue(TourEvent.class);
+                        list.add(tourEvent);
+                    }
 
-                adapter = new MyAdapter(list,getApplicationContext());
-                recyclerView.setAdapter(adapter);
+                    adapter = new MyAdapter(list, getApplicationContext());
+                    recyclerView.setAdapter(adapter);
+                    //flag = false;
+                //}
             }
 
             @Override

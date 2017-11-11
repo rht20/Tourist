@@ -5,12 +5,221 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-    </android.support.v7.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:padding="8dp"
+                android:background="#e0dede"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <ViewFlipper
+                            android:padding="5dp"
+                            android:id="@+id/viewFlipper"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:autoStart="true"
+                            android:flipInterval="2000">
+
+                            <ImageView
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:id="@+id/ivDetailsCover0"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp" />
+
+                            <ImageView
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:id="@+id/ivDetailsCover1"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp" />
+
+                            <ImageView
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:id="@+id/ivDetailsCover2"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp" />
+
+                            <ImageView
+                                android:layout_marginTop="3dp"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:id="@+id/ivDetailsCover3"
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp" />
+
+                        </ViewFlipper>
+
+                        <TextView
+                            android:id="@+id/detailsTitle"
+                            android:textColor="#304F71"
+                            android:textStyle="bold"
+                            android:padding="15dp"
+                            android:textSize="20dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_marginLeft="12dp"
+                            android:layout_marginRight="12dp"
+                            android:background="#bcbcbc"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp">
+
+                        </View>
+
+                        <TextView
+                            android:id="@+id/detailsNote"
+                            android:textSize="18dp"
+                            android:padding="15dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_marginTop="6dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                      <LinearLayout
+                          android:orientation="horizontal"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content">
+
+                          <ImageView
+                              android:layout_marginLeft="15dp"
+                              android:background="@mipmap/ic_details_date"
+                              android:layout_marginTop="15dp"
+                              android:padding="15dp"
+                              android:layout_width="30dp"
+                              android:layout_height="30dp" />
+                          <TextView
+
+                              android:id="@+id/detailsDate"
+                              android:layout_marginTop="5dp"
+                              android:padding="14dp"
+                              android:textSize="18dp"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content" />
+                      </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginLeft="15dp"
+                                android:background="@mipmap/ic_details_home"
+                                android:layout_marginTop="10dp"
+                                android:padding="15dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp" />
+                            <TextView
+
+                                android:id="@+id/detailsResidence"
+                                android:padding="15dp"
+                                android:textSize="18dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginLeft="15dp"
+                                android:background="@mipmap/ic_details_guide"
+                                android:layout_marginTop="10dp"
+                                android:padding="14dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp" />
+                            <TextView
+                                android:id="@+id/detailsGuide"
+                                android:padding="14dp"
+                                android:textSize="18dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_marginLeft="15dp"
+                                android:background="@mipmap/ic_details_cost"
+                                android:layout_marginTop="10dp"
+                                android:padding="14dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp" />
+                            <TextView
+
+                                android:id="@+id/detailsCost"
+                                android:padding="14dp"
+                                android:textSize="18dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:paddingBottom="52dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/linearlayout"
@@ -23,7 +232,7 @@
         <EditText
             android:id="@+id/comment_edit_text"
             android:padding="10dp"
-            android:layout_width="275dp"
+            android:layout_width="260dp"
             android:layout_height="50dp"
             android:layout_alignParentTop="true"
             android:layout_marginLeft="10dp"
@@ -36,11 +245,10 @@
         <ImageButton
             android:id="@+id/post_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:textColor="#FF000000"
-            android:textSize="30dp"
-            android:background="@mipmap/ic_send"/>
+            android:background="@mipmap/ic_send_comment"/>
     </LinearLayout>
 
 </RelativeLayout>

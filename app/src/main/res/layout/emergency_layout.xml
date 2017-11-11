@@ -1,133 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <android.support.v7.widget.CardView
-            app:cardBackgroundColor="#e8e8ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="6dp">
+            android:layout_margin="6dp"
+            app:cardBackgroundColor="#e8e8ed">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TextView
-                    android:padding="15dp"
-                    android:gravity="center"
-                    android:textSize="18dp"
-                    android:text="EMERGENCY CONTACTS"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="EMERGENCY CONTACTS"
+                    android:textSize="18dp" />
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            app:cardBackgroundColor="#e8e8ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
 
-            android:layout_margin="6dp">
+            app:cardBackgroundColor="#e8e8ed">
+
             <LinearLayout
-                android:padding="15dp"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:padding="15dp">
 
                 <TextView
-
-
-                    android:textSize="16dp"
-                    android:text="Captain philips"
+                    android:hint="Contact 1"
+                    android:id="@+id/emergencyContactName1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp" />
+
 
                 <EditText
-                    android:id="@+id/et_contact1"
-                    android:focusable="false"
-                    android:layout_marginTop="6dp"
-                    android:textSize="20dp"
-                    android:text="+8801521331720"
+                    android:id="@+id/editName1"
+                    android:visibility="gone"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Name"
+                    android:textSize="18dp" />
+
+                <EditText
+                    android:hint="Phone number"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/emerencyContactNumber1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:focusable="false"
+                    android:textSize="20dp" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <Button
-                        android:id="@+id/btn_call_contact1"
-                        android:layout_marginTop="3dp"
-                        android:text="CALL"
+                        android:id="@+id/callContact1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="CALL" />
+
                     <Button
-                        android:layout_marginTop="3dp"
-                        android:text="EDIT"
+                        android:id="@+id/editContact1"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="EDIT" />
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            app:cardBackgroundColor="#e8e8ed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
 
-            android:layout_margin="6dp">
+            app:cardBackgroundColor="#e8e8ed">
+
             <LinearLayout
-                android:padding="15dp"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:padding="15dp">
 
                 <TextView
-
-
-                    android:textSize="16dp"
-                    android:text="Ha Ha Moon"
+                    android:hint="Contact 2"
+                    android:id="@+id/emergencyContactName2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp" />
+                <EditText
+                    android:visibility="gone"
+                    android:id="@+id/editName2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:hint="Name"
+                    android:textSize="18dp" />
 
                 <EditText
-
-                    android:id="@+id/et_contact2"
-                    android:focusable="false"
-                    android:layout_marginTop="6dp"
-                    android:textSize="20dp"
-                    android:text="+8801521331897"
+                    android:hint="Phone number"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/emerencyContactNumber2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:focusable="false"
+                    android:textSize="20dp" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
                     <Button
-                        android:id="@+id/btn_call_contact2"
-                        android:layout_marginTop="3dp"
-                        android:text="CALL"
+                        android:id="@+id/callContact2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="CALL" />
+
                     <Button
-                        android:layout_marginTop="3dp"
-                        android:text="EDIT"
+                        android:id="@+id/editContact2"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="EDIT" />
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
     </LinearLayout>
-
 
 
 </FrameLayout>

@@ -20,6 +20,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.arm.tourist.CurrentTrip.OntripFragment;
+import com.arm.tourist.Models.TourPlan;
 import com.arm.tourist.NewPlan.NewPlanActivity;
 import com.arm.tourist.NewsFeed.ExplorePlanActivity;
 import com.arm.tourist.R;
@@ -35,6 +37,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.kwabenaberko.openweathermaplib.Units;
 import com.kwabenaberko.openweathermaplib.implementation.OpenWeatherMapHelper;
 import com.kwabenaberko.openweathermaplib.models.currentweather.CurrentWeather;
@@ -53,7 +60,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
 
-    private TextView temperature, skySts, locationTV, sunrise, sunset;
+    private TextView temperature, skySts, locationTV, sunrise, sunset, currentTour;
 
     private Location curLocation;
 
@@ -69,6 +76,8 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
 
     protected LocationManager locationManager;
 
+    TourPlan toAdd;
+
     View myView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,17 +88,28 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
         final ImageView explore = myView.findViewById(R.id.explore_trip);
         final ImageView upcoming = myView.findViewById(R.id.btnUpcomingTrips);
 
+        currentTour = myView.findViewById(R.id.homePageTVcurrent);
+
+        currentTour.setOnClickListener(new View.OnClickListener() {
+
+
+            @Override
+            public void onClick(View v) {
+
+                OntripFragment fragment = new OntripFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, fragment,"upcoming").addToBackStack("")
+                        .commit();
+            }
+        });
+
+
         explore.setOnClickListener(new View.OnClickListener() {
 
 
             @Override
             public void onClick(View v) {
-/*
-                exploreFragment fragment = new exploreFragment();
-                getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment,"findThisFragment")
-                        .addToBackStack(null)
-                        .commit();*/
+
                 Intent intent = new Intent(getActivity(), ExplorePlanActivity.class);
                 startActivity(intent);
             }
@@ -113,7 +133,7 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
 
                 upcomingToursFragment fragment = new upcomingToursFragment();
                 getActivity().getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fragment,"findThisFragment")
+                        .replace(R.id.content_frame, fragment,"upcoming").addToBackStack("")
                         .commit();
             }
         });
@@ -127,6 +147,8 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
         mUser = mAuth.getCurrentUser();
 
         getLocation();
+
+        setCurrentTrip();
 
 
 
@@ -167,11 +189,8 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
             });
         }
 
-
         else
         {
-
-
             openWeatherMapHelper.getCurrentWeatherByGeoCoordinates(curLocation.getLatitude(), curLocation.getLongitude(), new OpenWeatherMapHelper.CurrentWeatherCallback() {
                 @Override
                 public void onSuccess(CurrentWeather currentWeather) {
@@ -179,8 +198,6 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
                     temperature.setText(""+currentWeather.getMain().getTemp()+" °C");
                     skySts.setText(""+currentWeather.getWeatherArray().get(0).getMain());
                     locationTV.setText(""+currentWeather.getName() + ", " + currentWeather.getSys().getCountry());
-                    //sunrise.setText(unixTimeStampToDateTime(currentWeather.getSys().getSunrise()));
-                    //sunset.setText(unixTimeStampToDateTime(currentWeather.getSys().getSunset()));
 
                     Log.i(TAG, ""+unixTimeStampToDateTime(currentWeather.getSys().getSunrise()));
 
@@ -332,6 +349,65 @@ public class HomepageFragment extends Fragment implements View.OnClickListener,O
         }
         return false;
     }
+
+    private void setCurrentTrip()
+    {
+        final String uID = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        Log.e("user ", uID);
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("userPlans").child(uID);
+
+      //  Toast.makeText(getActivity(), uID, Toast.LENGTH_SHORT);
+
+        toAdd = new TourPlan();
+
+        toAdd.setTitle("");
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot tourSnapshot : dataSnapshot.getChildren()) {
+
+                    TourPlan tmp = tourSnapshot.getValue(TourPlan.class);
+
+                    Long currentTime = System.currentTimeMillis()/ 1000L;
+
+                  //  Log.e("String: ", tmp.getUnixTimeSt());
+
+                    Long planStart = Long.parseLong(tmp.getUnixTimeSt());
+
+                    Long planEnd = Long.parseLong(tmp.getUnixTimeEn());
+
+                    if(currentTime >= planStart && currentTime <= planEnd)
+                    {
+                        if(tmp!= null)
+                        {
+
+
+                    //    Log.e("Add korsi", tmp.getTitle());
+
+                        DatabaseReference mReference = FirebaseDatabase.getInstance().getReference()
+                                .child("currentTrip")
+                                .child(uID);
+                      //  mReference.setValue(tmp);
+                        return;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+
+
+    }
+
+
 
     @Override
     public void onStatusChanged(String s, int i, Bundle bundle) {

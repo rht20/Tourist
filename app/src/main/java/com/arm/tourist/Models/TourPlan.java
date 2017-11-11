@@ -4,13 +4,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.NonNull;
 
-/**
- * Created by hhmoon on 11/1/17.
- */
-
 public class TourPlan implements Parcelable, Comparable<TourPlan> {
 
-    String title, placeName, startDate, endDate, unixTimeSt;
+    String title, placeName, startDate, endDate, unixTimeSt, unixTimeEn;
     String planDetails; // long description
     BackPack backPack;
     Guide guide;
@@ -20,13 +16,13 @@ public class TourPlan implements Parcelable, Comparable<TourPlan> {
 
     public TourPlan() {}
 
-
     protected TourPlan(Parcel in) {
         title = in.readString();
         placeName = in.readString();
         startDate = in.readString();
         endDate = in.readString();
         unixTimeSt = in.readString();
+        unixTimeEn = in.readString();
         planDetails = in.readString();
         backPack = in.readParcelable(BackPack.class.getClassLoader());
         guide = in.readParcelable(Guide.class.getClassLoader());
@@ -55,44 +51,6 @@ public class TourPlan implements Parcelable, Comparable<TourPlan> {
             return new TourPlan[size];
         }
     };
-
-    @Override
-    public int compareTo(@NonNull TourPlan tourPlan) {
-
-        return this.unixTimeSt.compareTo(tourPlan.unixTimeSt);
-
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(title);
-        parcel.writeString(placeName);
-        parcel.writeString(startDate);
-        parcel.writeString(endDate);
-        parcel.writeString(unixTimeSt);
-        parcel.writeString(planDetails);
-        parcel.writeParcelable(backPack, i);
-        parcel.writeParcelable(guide, i);
-        parcel.writeParcelable(hotel, i);
-        if (placeLat == null) {
-            parcel.writeByte((byte) 0);
-        } else {
-            parcel.writeByte((byte) 1);
-            parcel.writeDouble(placeLat);
-        }
-        if (placeLongt == null) {
-            parcel.writeByte((byte) 0);
-        } else {
-            parcel.writeByte((byte) 1);
-            parcel.writeDouble(placeLongt);
-        }
-        parcel.writeString(postID);
-    }
 
     public String getTitle() {
         return title;
@@ -132,6 +90,14 @@ public class TourPlan implements Parcelable, Comparable<TourPlan> {
 
     public void setUnixTimeSt(String unixTimeSt) {
         this.unixTimeSt = unixTimeSt;
+    }
+
+    public String getUnixTimeEn() {
+        return unixTimeEn;
+    }
+
+    public void setUnixTimeEn(String unixTimeEn) {
+        this.unixTimeEn = unixTimeEn;
     }
 
     public String getPlanDetails() {
@@ -190,7 +156,40 @@ public class TourPlan implements Parcelable, Comparable<TourPlan> {
         this.postID = postID;
     }
 
-    public static Creator<TourPlan> getCREATOR() {
-        return CREATOR;
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(title);
+        parcel.writeString(placeName);
+        parcel.writeString(startDate);
+        parcel.writeString(endDate);
+        parcel.writeString(unixTimeSt);
+        parcel.writeString(unixTimeEn);
+        parcel.writeString(planDetails);
+        parcel.writeParcelable(backPack, i);
+        parcel.writeParcelable(guide, i);
+        parcel.writeParcelable(hotel, i);
+        if (placeLat == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(placeLat);
+        }
+        if (placeLongt == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeDouble(placeLongt);
+        }
+        parcel.writeString(postID);
+    }
+
+    @Override
+    public int compareTo(@NonNull TourPlan tourPlan) {
+        return 0;
     }
 }

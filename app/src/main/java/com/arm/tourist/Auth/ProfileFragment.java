@@ -227,7 +227,6 @@ public class ProfileFragment extends Fragment {
                                 .setValue(user1);
 
                         setEditingEnabled(true);
-
                     }
 
                     @Override
@@ -255,5 +254,4 @@ public class ProfileFragment extends Fragment {
             updateProfBtn.setVisibility(View.GONE);
         }
     }
-
 }

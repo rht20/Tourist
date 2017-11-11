@@ -26,7 +26,7 @@ import com.arm.tourist.Maps.MapsActivity;
 import com.arm.tourist.Models.UserProfile;
 import com.arm.tourist.NewPlan.NewPlanActivity;
 import com.arm.tourist.NewsFeed.ExplorePlanActivity;
-import com.arm.tourist.PublishTour.PublishFragmentFirst;
+import com.arm.tourist.PublishTour.PublishPlan1;
 import com.arm.tourist.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -178,12 +178,13 @@ public class MainActivity extends AppCompatActivity
         }
 
         else if (id == R.id.nav_publish) {
-            PublishFragmentFirst fragment = new PublishFragmentFirst();
+            /*PublishFragmentFirst fragment = new PublishFragmentFirst();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.content_frame, fragment);
             fragmentTransaction.addToBackStack("");
-            fragmentTransaction.commit();
-
+            fragmentTransaction.commit();*/
+            Intent intent = new Intent(MainActivity.this, PublishPlan1.class);
+            startActivity(intent);
         }
 
         if (id == R.id.nav_settings) {

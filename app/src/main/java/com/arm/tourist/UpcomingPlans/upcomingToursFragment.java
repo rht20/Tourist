@@ -47,15 +47,20 @@ public class upcomingToursFragment extends Fragment implements View.OnClickListe
 
                         for (DataSnapshot tourSnapshot : dataSnapshot.getChildren()) {
                             TourPlan tourPlan = tourSnapshot.getValue(TourPlan.class);
-                            arrays.add(tourPlan);
 
-                            // if less than current date, don't add**************************************
+                            Long currentTime = System.currentTimeMillis()/ 1000L;
+
+                            Long planTime = Long.parseLong(tourPlan.getUnixTimeSt());
+
+                            if(planTime>currentTime)
+                            {
+                                arrays.add(tourPlan);
+                            }
 
                             Log.e("Tag: ", tourPlan.getTitle() + "+++");
 
                         }
                         setViews();
-
                     }
 
                     @Override

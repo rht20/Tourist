@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#dbdbdb">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+
+                <ImageView
+                    android:id="@+id/ivCoverPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/hill" />
+
+                <TextView
+                    android:id="@+id/tourTitle"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Post semester final tour"
+                    android:textColor="#0f2552"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tourLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Keokradong, Banderban"
+                    android:textColor="#0f2552" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#0f2552">
+
+                </View>
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:text="Publish a note"
+                        android:textColor="#0f2552"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/shortNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Write short description of your tour..."
+                        android:lines="4" />
+
+                    <Button
+
+                        android:layout_gravity="right"
+
+                        android:id="@+id/importDays"
+                        android:text="Import days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Upload photos"
+                        android:textColor="#0f2552"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:id="@+id/ivTourImageOne"
+                            android:background="@mipmap/ic_upload"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/ivTourImageTwo"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            android:background="@mipmap/ic_upload" />
+
+                        <ImageView
+                            android:id="@+id/ivTourImageThree"
+                            android:background="@mipmap/ic_upload"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_marginLeft="20dp"
+                            />
+                    </LinearLayout>
+
+
+
+                    <Button
+                        android:id="@+id/publishPlan_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="18dp"
+                        android:layout_marginTop="12dp"
+                        android:background="#f6f7f6"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="Publish your plan"
+                        android:textColor="#20225c" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+    </ScrollView>
+
+</FrameLayout>
