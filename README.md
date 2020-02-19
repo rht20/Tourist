@@ -9,5 +9,5 @@ Features:
 
 [See more on youtube](https://youtu.be/8tJjDNu83Fg)
 
-Technology used:
+Technology used: \\
 Java
